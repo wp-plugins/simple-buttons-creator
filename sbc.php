@@ -1,7 +1,7 @@
 <?php
 /**
  * Plugin Name: Simple Buttons Creator
- * Plugin URI: @todo  Fill this out after uploaded to the wordpress plugins repo
+ * Plugin URI: https://wordpress.org/plugins/simple-buttons-creator/
  * Description: A simple way to create buttons with many customizable options available. After a button is created, you can use a Simple Buttons Creator widget to display the button onto the page. This plugin has been tested with <a href="http://wordpress.org/plugins/siteorigin-panels/">Page Builder by SiteOrigin</a>.
  * Version: 1.0
  * Author: Robby Chen

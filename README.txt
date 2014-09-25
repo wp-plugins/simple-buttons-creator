@@ -29,7 +29,7 @@ Or:
 
 = How can I contact you for some issues regarding the plugin? =
 
-You can contact me either through [GitHub issues page](https://github.com/robbychen/simple-buttons-creator/issues "GutHub issues page") or the WordPress support forum for this plugin at https://wordpress.org/support/plugin/[@todo  Place the plugin name here once I upload the plugin to the WP repo and confirm the plugin name].
+You can contact me either through [GitHub issues page](https://github.com/robbychen/simple-buttons-creator/issues "GutHub issues page") or the WordPress support forum for this plugin at https://wordpress.org/support/plugin/simple-buttons-creator/.
 
 == Screenshots ==
 
