@@ -1,7 +1,0 @@
-2.0:
- * Add an ability to save the buttons and list saved button styles near the top of the widget
- * Fix inability to use JavaScript when the widget is just added to the widget area by switching to use AngularJS
-
- 
-3.0:
- * If possible, add the style settings for the button hover state

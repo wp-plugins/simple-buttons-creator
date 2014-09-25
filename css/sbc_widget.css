@@ -1,0 +1,6 @@
+.sbc_buttons {
+	padding: 10px;
+}
+.sbc_buttons a:hover {
+	text-decoration: none;
+}

@@ -26,9 +26,21 @@ jQuery(document).ready(function($) {
 			// TODO: Make sure to add additional style property to the bt_style variable if adding more styles in the future
 		outputStyle: function() {	// This function outputs the CSS code for the preview button to the CSS code textbox
 			var bt_style = $(".bt_button a").css(["background-color", "color", "font-weight", "font-style", "font-size", "border-radius"]),
-				  bt_css = "";
+				  bt_css = $(".bt_css").html();
 			$.each(bt_style, function(pro, val) {
-				bt_css += pro + ": " + val + ";\n";
+				if (bt_css.search(pro) != -1) {	// Replace the style value if specified style already exists in the bt_css textbox instead of adding another style property
+					var styles = bt_css.split("\n");
+					for (var i = 0; i < styles.length; ++i) {
+						var pnv = styles[i].split(": ");
+						if (pnv[0] == pro) {
+							pnv[1] = val + "; ";
+							styles[i] = pnv.join(": ");
+						}
+					}
+					bt_css = styles.join("\n");
+				} else {
+					bt_css += pro + ": " + val + ";\n";
+				}
 			});
 			$(".bt_css").html(bt_css);
 		},
@@ -96,13 +108,20 @@ jQuery(document).ready(function($) {
 			}
 		}
 		if (error === "") {
-			$.post(currentPath + "/bt-manage.php", $(this).serialize(), function(data) {
-				$(".bt_status").removeClass("error").addClass("updated").html(data);
+			$.post(currentPath + "/bt-manage.php" + window.location.search + "&method=post", $(this).serialize(), function(data) {
+				
+				if (data.search("unique") != -1)
+					$(".bt_status").removeClass("updated").addClass("error").html(data);
+				else
+					$(".bt_status").removeClass("error").addClass("updated").html(data);
+				
+				if (data.search("added") != -1)
+					$(".button_id").val(parseInt($(".button_id").val()) + 1);
 			});
 		} else {
 			$(".bt_status").removeClass("updated").addClass("error").html(error);
 		}
 		$(window).scrollTop(0);
 	});
-		
+
 });

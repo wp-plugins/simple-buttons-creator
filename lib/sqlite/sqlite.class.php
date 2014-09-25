@@ -1,15 +1,25 @@
 <?php
-if (!class_exists("sqlite")):		// In order to prevent the class to be included multiple times
+
+if (class_exists("sqlite")):		// In order to prevent the class to be included multiple times
+
+	$sqlite = new ReflectionClass("sqlite");	
+	$sqlite_current = $sqlite->getFileName();
+	
+	if (filemtime(__FILE__) > filemtime($sqlite_current)):	// Replace the current class with the class in this file if it is newer than the current defined class
+		$new_sqlite = file_get_contents(__FILE__);
+		file_put_contents($sqlite_current, $new_sqlite);
+	endif;
+
+else:
 
 	class sqlite {
 
 		private $db;
 		public $tableName;
 
-		function __construct($database, $tableName='') {
-			if (empty($tableName)) $tableName = $database;
+		function __construct($filePath, $tableName) {
 			$this->tableName = $tableName;
-			$this->db = new PDO("sqlite:" . dirname(__FILE__) . "/{$database}.sqlite");
+			$this->db = new PDO("sqlite:" . $filePath);
 			$this->createTable();
 		}
 
@@ -57,6 +67,29 @@ if (!class_exists("sqlite")):		// In order to prevent the class to be included m
 			$records = sizeof($sql->fetchAll());
 			return $records;
 		}
+	
+			// This function deletes the specified data in the database
+		function remove_option($option, $id='1') {
+			$search = (!empty($option)) ? "setting='{$option}' AND group_id={$id}" : "group_id={$id}";
+			$sql = $this->db->prepare("DELETE FROM " . $this->tableName . " WHERE " . $search);
+			$sql->execute();
+		}
+		
+			// This function returns the group_id column as an array
+		function show_id($unique) {
+			$sql = $this->db->prepare("SELECT group_id FROM " . $this->tableName . " WHERE setting='{$unique}'");
+			$sql->execute();
+			$group_id['empty'] = "0";
+			foreach ($sql->fetchAll() as $query):
+				if (isset($group_id['empty']) && $group_id['empty'] == "0"):
+					array_pop($group_id);
+				endif;
+				$group_id[] = $query['group_id'];
+			endforeach;
+			return $group_id;
+		}
+		
 	}
+		
 endif;
 ?>
