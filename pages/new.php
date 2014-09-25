@@ -18,6 +18,9 @@
 			<!-- Setting up button area -->		
 <form class="bt_button_form">
 
+			<!-- Output the status for saving into the database -->
+		<div class="bt_status"></div>
+
 		<input type="hidden" name="button_id" value="<?php echo $buttonNum; ?>" />
 
 		<div class="bt_general">	
@@ -90,13 +93,7 @@
 		<p class="bt_save">
 			<input type="submit" class="button button-primary" value="Add" name="add" />
 		</p>
-		
-			<!-- Output the status for saving into the database -->
-		<div class="bt_status"></div>
-		
-					
-	<!-- TODO: Add a list of saved button styles here -->
-	
+								
 </form>
 <?php bt_preview(); ?>
 </div>

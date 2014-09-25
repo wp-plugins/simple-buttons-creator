@@ -62,7 +62,8 @@ class simpleButtons {
 		endif;
 	    wp_enqueue_script("sbc_admin_angular_app", plugins_url("js/app.js", __FILE__), array("sbc_admin_angular_js"));
 	    wp_enqueue_script("sbc_admin_angular_controller", plugins_url("js/controllers.js", __FILE__), array("sbc_admin_angular_js", "sbc_admin_angular_app"));
-	    wp_enqueue_script("sbc_admin_script", plugins_url("js/script.js", __FILE__), array("jquery"));
+		wp_enqueue_style( 'wp-color-picker' );
+	    wp_enqueue_script("sbc_admin_script", plugins_url("js/script.js", __FILE__), array("jquery", "wp-color-picker"));
     }
     
     public function bt_button_scripts() {

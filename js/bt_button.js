@@ -102,6 +102,7 @@ jQuery(document).ready(function($) {
 		} else {
 			$(".bt_status").removeClass("updated").addClass("error").html(error);
 		}
+		$(window).scrollTop(0);
 	});
 		
 });
