@@ -1,0 +1,54 @@
+/* The button preview area */
+
+.bt_button {
+	padding: 20px 0;
+	text-align: center;
+}
+
+.bt_button a {
+	padding:10px;
+	text-decoration: none;
+}
+
+/* The button setup form */
+
+.bt_button_form input[type='text'], .bt_button_form input[type='number'], .bt_button_form textarea {
+	width: 100%;
+}
+
+.basic_section_bt, .advanced_section_bt, .saved_bt_title {
+	margin: 0;
+	text-align: center;
+	cursor: pointer;
+	padding: 10px 0;
+	background: #2ea2cc;
+}
+
+.basic_section_bt a, .advanced_section_bt a, .saved_bt_title a {
+	display: block;
+	color: #FFF;
+}
+
+.bt_basics, .advanced_settings_bt, .saved_bt_section {
+	margin: 5px 0;
+	padding: 0 10px;
+	border: 1px solid #2ea2cc;
+}
+
+/* Advanced Settings section not shown by default */
+.advanced_section {
+	display: none;
+}
+
+/* Save button styles */
+.bt_save {
+	margin-bottom: 10px;
+	padding-bottom: 10px;
+	text-align: center;
+}
+
+.bt_save span {
+	display: block;
+	font-size: 10px;
+	font-weight: bold;
+}
