@@ -35,7 +35,7 @@ class simpleButtons {
 
     public function add_plugin_page() {
 		add_menu_page( "Simple Buttons Creator", "Simple Buttons Creator", "manage_options", "simple-buttons", array($this, "create_admin_page"));
-		add_submenu_page("simple-buttons", "Add a new button", "New", "manage_options", "sbc-new", array($this, "add_new_page"));
+		add_submenu_page("simple-buttons", "Add a new button", "Add New Button", "manage_options", "sbc-new", array($this, "add_new_page"));
     }
 
     public function create_admin_page() {
