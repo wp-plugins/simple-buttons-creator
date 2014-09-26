@@ -18,6 +18,7 @@ else:
 		public $tableName;
 
 		function __construct($filePath, $tableName) {
+			if (empty($tableName)) $tableName = "table1";  // Accommodates the use of my old script version
 			$this->tableName = $tableName;
 			$this->db = new PDO("sqlite:" . $filePath);
 			$this->createTable();
