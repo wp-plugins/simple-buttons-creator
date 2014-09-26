@@ -12,6 +12,8 @@ A simple way to create buttons with many customizable options available.
 
 A simple way to create buttons with many customizable options available. After a button is created, you can use a Simple Buttons Creator widget to display the button onto the page. This plugin has been tested with [Page Builder by SiteOrigin](http://wordpress.org/plugins/siteorigin-panels/ "Page Builder WordPress plugin").
 
+For some users experiencing the White Screen of Death once this plugin is installed, I'm still investigating this issue. Thanks for your patience.
+
 == Installation ==
 
 You can either:
