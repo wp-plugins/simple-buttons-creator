@@ -53,6 +53,9 @@ You can contact me either through [GitHub issues page](https://github.com/robbyc
 = 1.02 =
 * Updated sqlite class to preserve the database when updating the plugin.
 
+= 1.02.1 =
+* Dummy update to test the sqlite database
+
 == Upgrade Notice ==
 
 = 1.0 =
