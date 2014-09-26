@@ -28,7 +28,7 @@ jQuery(document).ready(function($) {
 			var bt_style = $(".bt_button a").css(["background-color", "color", "font-weight", "font-style", "font-size", "border-radius"]),
 				  bt_css = $(".bt_css").html();
 			$.each(bt_style, function(pro, val) {
-				if (bt_css.search(pro) != -1) {	// Replace the style value if specified style already exists in the bt_css textbox instead of adding another style property
+				if (bt_css.search(pro) != -1 && bt_css.search("\ncolor:") != -1) {	// Replace the style value if specified style already exists in the bt_css textbox instead of adding another style property
 					var styles = bt_css.split("\n");
 					for (var i = 0; i < styles.length; ++i) {
 						var pnv = styles[i].split(": ");

@@ -1,6 +1,6 @@
 === Simple Buttons Creator ===
 Contributors: robbychen
-Tags: button, widget
+Tags: button, widget, sqlite
 Requires at least: 3.0.1
 Tested up to: 4.0
 License: GPLv2 or later
@@ -46,6 +46,9 @@ You can contact me either through [GitHub issues page](https://github.com/robbyc
 
 = 1.0 =
 * Initial release
+
+= 1.01 =
+* Fixed missing link color issue
 
 == Upgrade Notice ==
 
