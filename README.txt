@@ -50,7 +50,13 @@ You can contact me either through [GitHub issues page](https://github.com/robbyc
 = 1.01 =
 * Fixed missing link color issue
 
+= 1.02 =
+* Updated sqlite class to preserve the database when updating the plugin.
+
 == Upgrade Notice ==
 
 = 1.0 =
 This is a initial release. No upgrade is necessary.
+
+= 1.02 =
+* This upgrade will reset the database. Make sure to backup the details for all your created buttons before upgrading.

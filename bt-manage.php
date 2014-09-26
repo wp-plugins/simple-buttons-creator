@@ -1,6 +1,6 @@
 <?php
 	require_once("lib/sqlite/sqlite.class.php");
-	$buttons = new sqlite(dirname(__FILE__) . "/data/sbc.sqlite", "buttons");
+	$buttons = new sqlite($_SERVER['DOCUMENT_ROOT'] . "/wp-content/data", "sbc", "buttons");
 	if ($_GET['method'] == "post" && isset($_POST['button_id']) && !isset($_GET['id'])):
 		$id = $_POST['button_id'];
 		$name = $_POST['bt_name'];

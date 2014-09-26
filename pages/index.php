@@ -1,5 +1,5 @@
 <?php
-	$buttons = new sqlite(dirname(dirname(__FILE__)) . "/data/sbc.sqlite", "buttons");
+	$buttons = new sqlite($_SERVER['DOCUMENT_ROOT'] . "/wp-content/data", "sbc", "buttons");
 	if (isset($_POST['method']) && $_POST['method'] == "delete" && isset($_POST['id'])):
 		$buttons->remove_option("", $_POST['id']);
 	endif;

@@ -8,7 +8,7 @@ class sbc_widget extends WP_Widget {
 	 * Register widget with WordPress.
 	 */
 	function __construct() {
-		$this->buttons = new sqlite(dirname(__FILE__) . "/data/sbc.sqlite", "buttons");
+		$this->buttons = new sqlite($_SERVER['DOCUMENT_ROOT'] . "/wp-content/data", "sbc", "buttons");
 		parent::__construct(
 			'sbc_widget',
 			__('Simple Buttons Creator', 'sbc_widget'),

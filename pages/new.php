@@ -8,7 +8,7 @@
 <?php
 	}
 
-	$buttons = new sqlite(dirname(dirname(__FILE__)) . "/data/sbc.sqlite", "buttons");
+	$buttons = new sqlite($_SERVER['DOCUMENT_ROOT'] . "/wp-content/data", "sbc", "buttons");
 	$id = $buttons->show_id("bt_name");
 	$num_buttons = 0;
 		// Determine the biggest group_id and assign the num_buttons variables to the biggest one

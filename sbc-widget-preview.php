@@ -1,7 +1,7 @@
 <?php
 	require_once("lib/sqlite/sqlite.class.php");
 	if (isset($_GET['id'])):
-		$buttons = new sqlite(dirname(__FILE__) . "/data/sbc.sqlite", "buttons");
+		$buttons = new sqlite($_SERVER['DOCUMENT_ROOT'] . "/wp-content/data", "sbc", "buttons");
 		$id = $_GET['id'];
 ?>
 		<div
