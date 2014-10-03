@@ -56,6 +56,9 @@ You can contact me either through [GitHub issues page](https://github.com/robbyc
 = 1.02.1 =
 * Dummy update to test the sqlite database
 
+= 1.03 =
+* Added an internal style for correctly displaying the button text color.
+
 == Upgrade Notice ==
 
 = 1.0 =

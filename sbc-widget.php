@@ -15,6 +15,7 @@ class sbc_widget extends WP_Widget {
 			array( 'description' => __( 'Choose from a list of created simple buttons to be used in the widget', 'sbc_widget' ))
 		);
 		add_action("wp_enqueue_scripts", array($this, "widget_scripts"));
+		add_action('wp_head', array($this, "widget_styles"));
 	}
 	
 	/**
@@ -25,6 +26,26 @@ class sbc_widget extends WP_Widget {
 	 public function widget_scripts() {
 		 wp_enqueue_style("sbc_buttons", plugins_url("css/sbc_widget.css", __FILE__));
 	 }
+
+	 /**
+		* Front-end of internal styles, used to display desired button styles
+	  */
+	  public function widget_styles() {
+	  	
+	  		// The following two lines of code are from the core widgets class at
+	  		// https://core.trac.wordpress.org/browser/tags/4.0/src/wp-includes/widgets.php
+	  	$all_instances = $this->get_settings();
+	  	$instance = $all_instances[$this->number];
+
+	  	$button = $instance['button_select'];
+	  ?>
+			<style>
+				.sbc_<?php echo $button; ?> a {
+					color: <?php echo $this->buttons->get_option("bt_txt_color", "", $button); ?> !important;
+				}
+			</style>
+	  <?php
+	  }
 
 	/**
 	 * Front-end display of widget.
@@ -39,7 +60,7 @@ class sbc_widget extends WP_Widget {
 		if ( ! empty( $instance['button_select'] ) ) {
 			$button = $instance['button_select'];
 ?>
-			<div class="sbc_buttons">
+			<div class="sbc_buttons sbc_<?php echo $button; ?>">
 				<a href="<?php echo $this->buttons->get_option("bt_link", "#", $button); ?>"
 					 style="padding: 10px; <?php echo $this->buttons->get_option("bt_css", "", $button); ?>">
 					<?php echo $this->buttons->get_option("bt_text", "Button", $button); ?>
