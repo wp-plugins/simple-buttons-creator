@@ -2,7 +2,8 @@
 
 class sbc_widget extends WP_Widget {
 
-	var $buttons;
+	var $buttons;	// Stores the SQLite database object
+	var $sbc_instance; // Stores the widget data
 
 	/**
 	 * Register widget with WordPress.
@@ -31,16 +32,11 @@ class sbc_widget extends WP_Widget {
 		* Front-end of internal styles, used to display desired button styles
 	  */
 	  public function widget_styles() {
-	  	
-	  		// The following two lines of code are from the core widgets class at
-	  		// https://core.trac.wordpress.org/browser/tags/4.0/src/wp-includes/widgets.php
-	  	$all_instances = $this->get_settings();
-	  	$instance = $all_instances[$this->number];
-
+	  	$instance = $this->sbc_instance;
 	  	$button = $instance['button_select'];
 	  ?>
 			<style>
-				.sbc_<?php echo $button; ?> a {
+				div.widget div.sbc_buttons.sbc_<?php echo $button; ?> a, div.sbc_buttons.sbc_<?php echo $button; ?> a {
 					color: <?php echo $this->buttons->get_option("bt_txt_color", "", $button); ?> !important;
 				}
 			</style>
@@ -55,8 +51,9 @@ class sbc_widget extends WP_Widget {
 	 * @param array $args     Widget arguments.
 	 * @param array $instance Saved values from database.
 	 */
-	public function widget( $args, $instance ) {	
-        echo $args['before_widget'];
+	public function widget( $args, $instance ) {
+		$this->sbc_instance = $instance;
+    echo $args['before_widget'];
 		if ( ! empty( $instance['button_select'] ) ) {
 			$button = $instance['button_select'];
 ?>

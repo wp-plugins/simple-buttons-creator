@@ -59,6 +59,9 @@ You can contact me either through [GitHub issues page](https://github.com/robbyc
 = 1.03 =
 * Added an internal style for correctly displaying the button text color.
 
+= 1.03.1 =
+* Fixed a PHP offset error which could cause white screen in the front page.
+
 == Upgrade Notice ==
 
 = 1.0 =
