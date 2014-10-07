@@ -62,6 +62,9 @@ You can contact me either through [GitHub issues page](https://github.com/robbyc
 = 1.03.1 =
 * Fixed a PHP offset error which could cause white screen in the front page.
 
+= 1.03.2 =
+* Fixed a PHP style error which could cause white screen in the front page.
+
 == Upgrade Notice ==
 
 = 1.0 =

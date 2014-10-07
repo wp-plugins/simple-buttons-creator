@@ -3,7 +3,6 @@
 class sbc_widget extends WP_Widget {
 
 	var $buttons;	// Stores the SQLite database object
-	var $sbc_instance; // Stores the widget data
 
 	/**
 	 * Register widget with WordPress.
@@ -16,7 +15,6 @@ class sbc_widget extends WP_Widget {
 			array( 'description' => __( 'Choose from a list of created simple buttons to be used in the widget', 'sbc_widget' ))
 		);
 		add_action("wp_enqueue_scripts", array($this, "widget_scripts"));
-		add_action('wp_head', array($this, "widget_styles"));
 	}
 	
 	/**
@@ -28,21 +26,6 @@ class sbc_widget extends WP_Widget {
 		 wp_enqueue_style("sbc_buttons", plugins_url("css/sbc_widget.css", __FILE__));
 	 }
 
-	 /**
-		* Front-end of internal styles, used to display desired button styles
-	  */
-	  public function widget_styles() {
-	  	$instance = $this->sbc_instance;
-	  	$button = $instance['button_select'];
-	  ?>
-			<style>
-				div.widget div.sbc_buttons.sbc_<?php echo $button; ?> a, div.sbc_buttons.sbc_<?php echo $button; ?> a {
-					color: <?php echo $this->buttons->get_option("bt_txt_color", "", $button); ?> !important;
-				}
-			</style>
-	  <?php
-	  }
-
 	/**
 	 * Front-end display of widget.
 	 *
@@ -52,14 +35,15 @@ class sbc_widget extends WP_Widget {
 	 * @param array $instance Saved values from database.
 	 */
 	public function widget( $args, $instance ) {
-		$this->sbc_instance = $instance;
     echo $args['before_widget'];
 		if ( ! empty( $instance['button_select'] ) ) {
 			$button = $instance['button_select'];
+			$bt_css = $this->buttons->get_option("bt_css", "", $button);
+			$bt_txt_color = "color: " . $this->buttons->get_option("bt_txt_color", "", $button) . " !important;";
 ?>
 			<div class="sbc_buttons sbc_<?php echo $button; ?>">
 				<a href="<?php echo $this->buttons->get_option("bt_link", "#", $button); ?>"
-					 style="padding: 10px; <?php echo $this->buttons->get_option("bt_css", "", $button); ?>">
+					 style="padding: 10px; <?php echo $bt_css . $bt_txt_color; ?>">
 					<?php echo $this->buttons->get_option("bt_text", "Button", $button); ?>
 				</a>
 			</div>
