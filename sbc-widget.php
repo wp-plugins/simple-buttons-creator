@@ -38,10 +38,11 @@ class sbc_widget extends WP_Widget {
     echo $args['before_widget'];
 		if ( ! empty( $instance['button_select'] ) ) {
 			$button = $instance['button_select'];
+			$center = (!empty($instance['bt_center']) && $instance['bt_center'] == "checked") ? "text-align: center; margin: 0 auto;" : "";
 			$bt_css = $this->buttons->get_option("bt_css", "", $button);
 			$bt_txt_color = "color: " . $this->buttons->get_option("bt_txt_color", "", $button) . " !important;";
 ?>
-			<div class="sbc_buttons sbc_<?php echo $button; ?>">
+			<div class="sbc_buttons" style="<?php echo $center; ?>">
 				<a href="<?php echo $this->buttons->get_option("bt_link", "#", $button); ?>"
 					 style="padding: 10px; <?php echo $bt_css . $bt_txt_color; ?>">
 					<?php echo $this->buttons->get_option("bt_text", "Button", $button); ?>
@@ -60,7 +61,7 @@ class sbc_widget extends WP_Widget {
 	 * @param array $instance Previously saved values from database.
 	 */
 	public function form( $instance ) {
-		$fields = array("button_select"=>"1");
+		$fields = array("button_select"=>"1", "bt_center"=>"");
 		foreach ($fields as $field=>$default):
 			if (isset($instance[$field])):
 				$$field = $instance[$field];
@@ -90,6 +91,10 @@ class sbc_widget extends WP_Widget {
 					</a>
 				</div>
 			</div>
+			<div class="center">
+				<input type='checkbox' id='<?php echo $this->get_field_id("bt_center"); ?>' name='<?php echo $this->get_field_name("bt_center"); ?>' value='checked' <?php echo $bt_center; ?> />
+				<label for='<?php echo $this->get_field_id("bt_center"); ?>'>Center button</label>
+			</div>
 		</p>
 		<?php 
 	}
@@ -106,7 +111,11 @@ class sbc_widget extends WP_Widget {
 	 */
 	public function update( $new_instance, $old_instance ) {
 		$instance = array();
-		$instance['button_select'] = ( ! empty( $new_instance['button_select'] ) ) ? strip_tags( $new_instance['button_select'] ) : '';
+		$fields = array("button_select", "bt_center");
+
+		foreach ($fields as $field):
+			$instance[$field] = ( ! empty( $new_instance[$field] ) ) ? strip_tags( $new_instance[$field] ) : '';
+		endforeach;
 
 		return $instance;
 	}

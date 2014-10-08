@@ -65,6 +65,9 @@ You can contact me either through [GitHub issues page](https://github.com/robbyc
 = 1.03.2 =
 * Fixed a PHP style error which could cause white screen in the front page.
 
+= 1.04 =
+* Added an option in the widget to allow button to be centered.
+
 == Upgrade Notice ==
 
 = 1.0 =
