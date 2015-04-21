@@ -69,7 +69,7 @@ You can contact me either through [GitHub issues page](https://github.com/robbyc
 * Added an option in the widget to allow button to be centered.
 
 = 1.05 =
-* Updated to support current version of WordPress. Also, this plugin is now in sync with [GitHub](https://github.com/robbychen/simple-buttons-creator-svn/issues "Simple Buttons Creator GutHub repo").
+* Updated to support current version of WordPress. Also, this plugin is now in sync with [GitHub](https://github.com/robbychen/simple-buttons-creator-svn "Simple Buttons Creator GutHub repo").
 
 == Upgrade Notice ==
 
