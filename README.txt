@@ -29,7 +29,7 @@ Or:
 
 = How can I contact you for some issues regarding the plugin? =
 
-You can contact me either through [GitHub issues page](https://github.com/robbychen/simple-buttons-creator/issues "GutHub issues page") or the WordPress support forum for this plugin at https://wordpress.org/support/plugin/simple-buttons-creator/.
+You can contact me either through [GitHub issues page](https://github.com/robbychen/simple-buttons-creator-svn/issues "GutHub issues page") or the WordPress support forum for this plugin at https://wordpress.org/support/plugin/simple-buttons-creator/.
 
 == Screenshots ==
 
@@ -67,6 +67,9 @@ You can contact me either through [GitHub issues page](https://github.com/robbyc
 
 = 1.04 =
 * Added an option in the widget to allow button to be centered.
+
+= 1.05 =
+* Updated to support current version of WordPress. Also, this plugin is now in sync with [GitHub](https://github.com/robbychen/simple-buttons-creator-svn/issues "Simple Buttons Creator GutHub repo").
 
 == Upgrade Notice ==
 
