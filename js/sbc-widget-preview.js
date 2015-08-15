@@ -5,5 +5,5 @@ jQuery(document).ready(function($) {
 			$(".sbc_widget_preview").html(data);
 		});
 	});
-	$(".widget-inside").show();
+	// $(".widget-inside").show();
 });

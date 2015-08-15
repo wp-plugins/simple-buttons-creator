@@ -2,7 +2,7 @@
 Contributors: robbychen
 Tags: button, widget, sqlite
 Requires at least: 3.9.2
-Tested up to: 4.1.1
+Tested up to: 4.2.4
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -69,7 +69,10 @@ You can contact me either through [GitHub issues page](https://github.com/robbyc
 * Added an option in the widget to allow button to be centered.
 
 = 1.05 =
-* Updated to support current version of WordPress. Also, this plugin is now in sync with [GitHub](https://github.com/robbychen/simple-buttons-creator-svn "Simple Buttons Creator GutHub repo").
+* Updated to support current version of WordPress. Also, this plugin is now in sync with [GitHub](https://github.com/robbychen/simple-buttons-creator "Simple Buttons Creator GutHub repo").
+
+= 1.06 =
+* Updated to support latest version of WordPress (4.2.4). Fixed a bug that automatically opens all of the widgets settings in the Widgets management page.
 
 == Upgrade Notice ==
 
